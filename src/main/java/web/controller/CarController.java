@@ -6,7 +6,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import web.model.Car;
 import web.service.CarService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping("/car")
@@ -20,12 +24,8 @@ public class CarController {
     }
 
     @GetMapping()
-    public String anyCountCar(@RequestParam(value = "count", required = false) Integer count, Model model) {
-        if (count != null && count <= carService.getCars().size()) {
-            model.addAttribute("cars", carService.getSomeNumberCars(count));
-        } else if (count == null || carService.getCars().size() == 0 || carService.getCars().size() < count) {
-            model.addAttribute("cars", carService.getCars());
-        }
+    public String displayCarsByCount(@RequestParam(value = "count", required = false) Integer count, Model model) {
+        model.addAttribute("cars", carService.getCarsToDisplay(count));
         return "cars/car";
     }
 }

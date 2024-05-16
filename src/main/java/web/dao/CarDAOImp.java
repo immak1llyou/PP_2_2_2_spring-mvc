@@ -13,11 +13,11 @@ public class CarDAOImp implements CarDAO {
 
     {
         cars = new ArrayList<Car>();
-        cars.add(new Car("model1", "black", 1));
-        cars.add(new Car("model2", "white", 2));
-        cars.add(new Car("model3", "yellow", 3));
-        cars.add(new Car("model4", "red", 4));
-        cars.add(new Car("model5", "purple", 5));
+        cars.add(new Car("model1", "black", 2010));
+        cars.add(new Car("model2", "white", 2015));
+        cars.add(new Car("model3", "yellow", 2020));
+        cars.add(new Car("model4", "red", 2024));
+        cars.add(new Car("model5", "purple", 2023));
     }
 
     @Override

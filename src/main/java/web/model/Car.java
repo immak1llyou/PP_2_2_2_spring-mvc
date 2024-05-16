@@ -3,12 +3,12 @@ package web.model;
 public class Car {
     private String model;
     private String color;
-    private int id;
+    private int year;
 
-    public Car(String model, String color, int id) {
+    public Car(String model, String color, int year) {
         this.model = model;
         this.color = color;
-        this.id = id;
+        this.year = year;
     }
 
     public String getModel() {
@@ -27,7 +27,11 @@ public class Car {
         this.color = color;
     }
 
-    public int getId() {
-        return id;
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 }
